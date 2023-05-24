@@ -1,0 +1,14 @@
+//
+// Created by YP00801161 on 24/05/2023.
+//
+
+#ifndef CPLUSPLUS_REFERENCEPOINTERS_H
+#define CPLUSPLUS_REFERENCEPOINTERS_H
+
+
+class ReferencePointers {
+
+};
+
+
+#endif //CPLUSPLUS_REFERENCEPOINTERS_H
