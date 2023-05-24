@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-int main() {
+int main_test3() {
     // Create and open a text file
     cout <<"\n";
     cout <<"File Test - writing and Reading";

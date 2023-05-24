@@ -1,0 +1,14 @@
+//
+// Created by YP00801161 on 24/05/2023.
+//
+
+#ifndef CPLUSPLUS_TWODIMENSINARRAY_H
+#define CPLUSPLUS_TWODIMENSINARRAY_H
+
+
+class TwoDimensinArray {
+
+};
+
+
+#endif //CPLUSPLUS_TWODIMENSINARRAY_H
