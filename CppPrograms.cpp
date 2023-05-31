@@ -1,11 +1,24 @@
 #include <iostream>
 #include <map>
+#include <cstring>
 
 void factorial(int i);
 
 void armstrong(int number);
 
 void sumOfDigits(int number);
+
+void swapNumbers(int a, int b);
+
+void numberToChar(int number);
+
+void numberTriangle(int range);
+
+void arrayToString();
+
+void splitStringWords();
+
+void decimal2Binary(int number);
 
 using namespace std;
 
@@ -179,6 +192,155 @@ void sumOfDigits(int number) {
     }
     cout<<endl << "Sum of digits of " << temp << " is : "  <<sum<<endl;
 }
+void swapNumbers(int a, int b) {
+    cout<<"Before swap a= "<<a<<" b= "<<b<<endl;
+    a=a*b; //a=50 (5*10)
+    b=a/b; //b=5 (50/10)
+    a=a/b; //a=10 (50/5)
+    cout<<"After swap a= "<<a<<" b= "<<b<<endl;
+}
+
+void swapNumbersPlusMinus(int a, int b) {
+    cout<<"\nPlus Minus Using \n Before swap a= "<<a<<" b= "<<b<<endl;
+    a=a+b; //a=10 (5*10)
+    b=a-b; //b=5 (50/10)
+    a=a+b;
+    cout<<"After swap a= "<<a<<" b= "<<b<<endl;
+}
+
+void numberToChar(int number) {
+
+    long int sum=0,r;
+    cout<<"\n Digit to Word Conversion - 35 to Three Five \n";
+    while(number>0)
+    {
+        r=number%10;
+        sum=sum*10+r;
+        number=number/10;
+    }
+    number=sum;
+    while(number>0)
+    {
+        r=number%10;
+        switch(r)
+        {
+            case 1:
+                cout<<"one ";
+                break;
+            case 2:
+                cout<<"two ";
+                break;
+            case 3:
+                cout<<"three ";
+                break;
+            case 4:
+                cout<<"four ";
+                break;
+            case 5:
+                cout<<"five ";
+                break;
+            case 6:
+                cout<<"six ";
+                break;
+            case 7:
+                cout<<"seven ";
+                break;
+            case 8:
+                cout<<"eight ";
+                break;
+            case 9:
+                cout<<"nine ";
+                break;
+            case 0:
+                cout<<"zero ";
+                break;
+            default:
+                cout<<"tttt";
+                break;
+        }
+        number=number/10;
+    }
+}
+
+void numberTriangle(int range) {
+    int i,j,k,l;
+    cout<<"\n Number Triangle \n";
+    for(i=1;i<=range;i++)
+    {
+        for(j=1;j<=range-i;j++)
+        {
+            cout<<" ";
+        }
+        for(k=1;k<=i;k++)
+        {
+            cout<<k;
+        }
+        for(l=i-1;l>=1;l--)
+        {
+            cout<<l;
+        }
+        cout<<"\n";
+    }
+}
+
+
+void arrayToString() {
+    cout <<"\n Char to String \n";
+    char char_array[] = {'J','A','V','A','T','P','O','I','N','T'};
+    string j(char_array);
+    cout << j <<endl;
+}
+
+void arrayToString2() {
+    cout <<"\n Char to String - Other Way \n";
+    char char_array[] = {'Y','U','V','A','R','A','J','-','C','S','E'};
+    int array_size = sizeof(char_array) /
+                     sizeof(char);
+    string j = "";
+    int i;
+    for(i = 0; i < array_size; i++)
+    {
+        /** retrieving and merging the value of character array on position 'i'*/
+        j = j + char_array[i];
+    }
+    cout << j <<endl;
+}
+
+void arrayToString3() {
+    char char_array[] = {'Y', 'U', 'V', 'A', 'R', 'A', 'J', '-', 'B', 'E'};
+    string j = char_array;
+    cout << j << endl;
+}
+
+void splitStringWords() {
+    char str[100] = "Learn how to split a string token  in C++ using the strtok() function."; // declare the size of string
+    cout << " Split String: " <<endl;
+    char *ptr; // declare a ptr pointer
+    ptr = strtok(str, " , "); // use strtok() function to separate string using comma (,) delimiter.
+    cout << " \n Split string using strtok() function: " << endl;
+    // use while loop to check ptr is not null
+    while (ptr != nullptr)
+    {
+        cout << ptr  << endl; // print the string token
+        ptr = strtok (NULL, " , ");
+    }
+}
+
+void decimal2Binary(int number) {
+    int a[10], i;
+    cout<<"Given Number  " << number <<endl;
+    for(i=0; number>0; i++)
+    {
+        a[i]=number%2;
+        number= number/2;
+    }
+    cout<<"Binary of the given number= ";
+    for(i=i-1 ;i>=0 ;i--)
+    {
+        cout<<a[i];
+    }
+}
+
 
 int main(){
     twoDimensionArray();
@@ -201,8 +363,30 @@ int main(){
     armstrong(11);
     sumOfDigits(123);
     sumOfDigits(111);
+    reverseNumber(123);
+    swapNumbers(10,20);
+    swapNumbersPlusMinus(39,78);
+    numberToChar(7687);
+    numberToChar(4432);
+    numberTriangle(9);
+    arrayToString();
+    arrayToString2();
+    arrayToString3();
+    splitStringWords();
+    decimal2Binary(56);
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
