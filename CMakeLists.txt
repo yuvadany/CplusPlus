@@ -3,4 +3,4 @@ project(CplusPlus)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(CplusPlus LibraryProject.cpp LibraryProject.cpp ReferencePointers.cpp ReferencePointers.h FileTest.cpp FileTest.h TwoDimensinArray.cpp TwoDimensinArray.h)
+add_executable(CplusPlus LibraryProject.cpp LibraryProject.cpp ReferencePointers.cpp ReferencePointers.h FileTest.cpp FileTest.h CppPrograms.cpp CppPrograms.h)
