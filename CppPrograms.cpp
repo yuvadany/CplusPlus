@@ -20,6 +20,8 @@ void splitStringWords();
 
 void decimal2Binary(int number);
 
+void intToChar(int number);
+
 using namespace std;
 
 void twoDimensionArray(){
@@ -94,16 +96,24 @@ void frequencyOfWords(string str){
     }
 
     void reverseNumber(int number){
-        int  rem, rev=0;
+        int   rev=0;
+        double rem;
         int num = number;
+        cout << endl;
+        cout << "start\n" ;
         while(number!=0)
         {
             rem = number%10;
+            cout << rem  << endl ;
             rev = rem + (rev*10);
+            cout << rev << endl ;
             number = number/10;
+            cout << number << endl ;
         }
+cout << "end\n";
         cout<<"\nReverse of  " << num << " is "<<rev;
         cout<<endl;
+
 }
 
 void fibonacciSeries(int number){
@@ -209,9 +219,8 @@ void swapNumbersPlusMinus(int a, int b) {
 }
 
 void numberToChar(int number) {
-
+ cout <<  " \n numberToChar of " << number << " is below \n ";
     long int sum=0,r;
-    cout<<"\n Digit to Word Conversion - 35 to Three Five \n";
     while(number>0)
     {
         r=number%10;
@@ -219,40 +228,52 @@ void numberToChar(int number) {
         number=number/10;
     }
     number=sum;
-    while(number>0)
+    char wordsFromDigits[] = {};
+    string words ="";
+        while(number>0)
     {
         r=number%10;
         switch(r)
         {
             case 1:
                 cout<<"one ";
+                words+="one ";
                 break;
             case 2:
                 cout<<"two ";
+                words+="two ";
                 break;
             case 3:
                 cout<<"three ";
+                words+="three ";
                 break;
             case 4:
                 cout<<"four ";
+                words+="four ";
                 break;
             case 5:
                 cout<<"five ";
+                words+="five ";
                 break;
             case 6:
                 cout<<"six ";
+                words+="six ";
                 break;
             case 7:
                 cout<<"seven ";
+                words+="seven ";
                 break;
             case 8:
                 cout<<"eight ";
+                words+="eight ";
                 break;
             case 9:
                 cout<<"nine ";
+                words+="nine ";
                 break;
             case 0:
                 cout<<"zero ";
+                words+="zero ";
                 break;
             default:
                 cout<<"tttt";
@@ -260,6 +281,7 @@ void numberToChar(int number) {
         }
         number=number/10;
     }
+        cout << endl <<  words;
 }
 
 void numberTriangle(int range) {
@@ -291,6 +313,12 @@ void arrayToString() {
     cout << j <<endl;
 }
 
+void arrayToString3() {
+    char char_array[] = {'Y', 'U', 'V', 'A', 'R', 'A', 'J', '-', 'B', 'E'};
+    string j = char_array;
+    cout << j << endl;
+}
+
 void arrayToString2() {
     cout <<"\n Char to String - Other Way \n";
     char char_array[] = {'Y','U','V','A','R','A','J','-','C','S','E'};
@@ -306,11 +334,7 @@ void arrayToString2() {
     cout << j <<endl;
 }
 
-void arrayToString3() {
-    char char_array[] = {'Y', 'U', 'V', 'A', 'R', 'A', 'J', '-', 'B', 'E'};
-    string j = char_array;
-    cout << j << endl;
-}
+
 
 void splitStringWords() {
     char str[100] = "Learn how to split a string token  in C++ using the strtok() function."; // declare the size of string
@@ -341,6 +365,12 @@ void decimal2Binary(int number) {
     }
 }
 
+/*
+void intToChar(int number) {
+
+}
+*/
+
 
 int main(){
     twoDimensionArray();
@@ -349,7 +379,6 @@ int main(){
     string str2 = "ice ice cream mango and coconut tea coffee tea";
     frequencyOfWords(str2);
     reverseNumber(123);
-    reverseNumber(8899);
     fibonacciSeries(3);
     primeNumber(19);
     primeNumber(20);
@@ -363,19 +392,22 @@ int main(){
     armstrong(11);
     sumOfDigits(123);
     sumOfDigits(111);
-    reverseNumber(123);
     swapNumbers(10,20);
     swapNumbersPlusMinus(39,78);
     numberToChar(7687);
     numberToChar(4432);
+    numberToChar(1500);
     numberTriangle(9);
     arrayToString();
     arrayToString2();
     arrayToString3();
     splitStringWords();
     decimal2Binary(56);
+    //intToChar(2300);
     return 0;
 }
+
+
 
 
 
