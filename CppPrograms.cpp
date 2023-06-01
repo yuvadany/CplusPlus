@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include <cstring>
-
+#include <list>
 void factorial(int i);
 
 void armstrong(int number);
@@ -21,6 +21,8 @@ void splitStringWords();
 void decimal2Binary(int number);
 
 void intToChar(int number);
+
+void intToString(int number);
 
 using namespace std;
 
@@ -218,71 +220,7 @@ void swapNumbersPlusMinus(int a, int b) {
     cout<<"After swap a= "<<a<<" b= "<<b<<endl;
 }
 
-void numberToChar(int number) {
- cout <<  " \n numberToChar of " << number << " is below \n ";
-    long int sum=0,r;
-    while(number>0)
-    {
-        r=number%10;
-        sum=sum*10+r;
-        number=number/10;
-    }
-    number=sum;
-    char wordsFromDigits[] = {};
-    string words ="";
-        while(number>0)
-    {
-        r=number%10;
-        switch(r)
-        {
-            case 1:
-                cout<<"one ";
-                words+="one ";
-                break;
-            case 2:
-                cout<<"two ";
-                words+="two ";
-                break;
-            case 3:
-                cout<<"three ";
-                words+="three ";
-                break;
-            case 4:
-                cout<<"four ";
-                words+="four ";
-                break;
-            case 5:
-                cout<<"five ";
-                words+="five ";
-                break;
-            case 6:
-                cout<<"six ";
-                words+="six ";
-                break;
-            case 7:
-                cout<<"seven ";
-                words+="seven ";
-                break;
-            case 8:
-                cout<<"eight ";
-                words+="eight ";
-                break;
-            case 9:
-                cout<<"nine ";
-                words+="nine ";
-                break;
-            case 0:
-                cout<<"zero ";
-                words+="zero ";
-                break;
-            default:
-                cout<<"tttt";
-                break;
-        }
-        number=number/10;
-    }
-        cout << endl <<  words;
-}
+
 
 void numberTriangle(int range) {
     int i,j,k,l;
@@ -370,6 +308,100 @@ void intToChar(int number) {
 
 }
 */
+void intToStringToChar(int number) {
+    cout << endl << "int to String Program ";
+    cout << endl << number << "\n After int to String Conversion : \n" ;
+    string string_num = to_string(number);
+    cout << " The string is : " << string_num;
+
+    char char_str[string_num.size()];
+    strcpy(char_str, string_num.c_str());    // or, pass `&s[0]`
+    cout << "\n After string-char conversion  the value is : " <<char_str << endl;
+    cout << "\n The string_num size " << string_num.size() ;
+    cout << "\n The char size " << sizeof(char_str) << endl ;
+    for (int i=0; i< sizeof(char_str); i++)
+        cout <<  char_str[i] << " - ";
+}
+
+void charToInt(char char_num){
+    cout << endl << "Char to int Conversion \n";
+    // Subtracting 48 will produce desired results
+    int num =  int(char_num) - 48 ;
+    cout << num << endl;
+         // Also subtracting '0' will result in same output
+    int num_2 =  int(char_num - '0');
+    cout << num_2 << endl;
+}
+
+void numberToChar(int number) {
+    cout <<  " \n numberToChar of " << number << " is below \n ";
+    long int sum=0,r;
+  /*  while(number>0)
+    {
+        r=number%10;
+        sum=sum*10+r;
+        number=number/10;
+    }
+    number=sum;*/
+    char wordsFromDigits[] = {};
+    list<string> my_list;
+    while(number>0)
+    {
+        r=number%10;
+        switch(r)
+        {
+
+            case 1:
+                cout<<"one ";
+                my_list.push_front("one ");
+                break;
+            case 2:
+                cout<<"two ";
+                my_list.push_front("two ");
+                break;
+            case 3:
+                cout<<"three ";
+                my_list.push_front("three ");
+                break;
+            case 4:
+                cout<<"four ";
+                my_list.push_front("four ");
+                break;
+            case 5:
+                cout<<"five ";
+                my_list.push_front("five ");
+                break;
+            case 6:
+                cout<<"six ";
+                my_list.push_front("six ");
+                break;
+            case 7:
+                cout<<"seven ";
+                my_list.push_front("seven ");
+                break;
+            case 8:
+                cout<<"eight ";
+                my_list.push_front("eight ");
+                break;
+            case 9:
+                cout<<"nine ";
+                my_list.push_front("nine ");
+                break;
+            case 0:
+                cout<<"zero ";
+                my_list.push_front("zero ");
+                break;
+            default:
+                cout<<"tttt";
+                break;
+        }
+        number=number/10;
+    }
+    cout << "\n After digital to string conversion - the my_list value  \n";
+    for (list<string>::iterator i=my_list.begin(); i!=my_list.end(); i++)
+        cout << *i << " ";
+
+}
 
 
 int main(){
@@ -403,9 +435,13 @@ int main(){
     arrayToString3();
     splitStringWords();
     decimal2Binary(56);
-    //intToChar(2300);
+    intToStringToChar(2300);
+    charToInt('5');
+    charToInt('8');
     return 0;
 }
+
+
 
 
 
