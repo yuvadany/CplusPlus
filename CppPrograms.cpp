@@ -2,6 +2,9 @@
 #include <map>
 #include <cstring>
 #include <list>
+#include <math.h>
+#include <sstream>
+
 void factorial(int i);
 
 void armstrong(int number);
@@ -25,6 +28,20 @@ void intToChar(int number);
 void intToString(int number);
 
 void listReverse();
+
+void firstLastNumberSwap();
+
+void numberOfDigitsOfSum(int i, int i1);
+
+void numberSort();
+
+void lowerToUpperCase();
+
+void extractDigitFromString();
+
+void HourMinuteSeparation(int i);
+
+void sumOfDigitsOfRange(int x, int y);
 
 using namespace std;
 
@@ -408,6 +425,165 @@ void listReverse() {
         cout << num << " " ;
 
 }
+
+
+void currentDateTime(){
+    time_t t = time(NULL);
+    tm* tPtr = localtime(&t);
+    cout << "\n\n Display the Current Date and Time :\n";
+    cout << "----------------------------------------\n";
+    cout << " seconds = " << (tPtr->tm_sec) << endl;
+    cout << " minutes = " << (tPtr->tm_min) << endl;
+    cout << " hours = " << (tPtr->tm_hour) << endl;
+    cout << " day of month = " << (tPtr->tm_mday) << endl;
+    cout << " month of year = " << (tPtr->tm_mon)+1 << endl;
+    cout << " year = " << (tPtr->tm_year)+1900 << endl;
+    cout << " weekday = " << (tPtr->tm_wday )<< endl;
+    cout << " day of year = " << (tPtr->tm_yday )<< endl;
+    cout << " daylight savings = " <<(tPtr->tm_isdst )<< endl;
+    cout << endl;
+    cout << endl;
+    cout << " Current Date: " <<(tPtr->tm_mday)<<"/"<< (tPtr->tm_mon)+1 <<"/"<< (tPtr->tm_year)+1900<< endl;
+    cout << " Current Time: " << (tPtr->tm_hour)<<":"<< (tPtr->tm_min)<<":"<< (tPtr->tm_sec) << endl;
+    cout << endl;
+}
+
+void stringOperations(){
+    cout << "\n\n Show the manipulation of a string:\n";
+    cout << " -------------------------------------\n";
+    string txt = "welcome, w3resource";
+    cout <<" The string:: "<< txt << endl;
+    cout <<" The length of the string:: "<< txt.length() << endl;
+    cout <<" The char at index 1 of the string:: "<< txt.at(1) << endl;
+    cout <<" The char at index 1 of the string [using array ]:: "<< txt[1] << endl;
+    cout <<" Is the string empty:: "<< txt.empty() << endl;
+    cout <<" Retrieve the sub-string from 3rd position for 4 characters:: "<< txt.substr(3, 4) << endl;
+    cout <<" The sub-string replace by 'went':: "<< txt.replace(3, 4, "went") << endl;
+    cout <<" Append a string ' end' at last of the string:: "<< txt.append(" end") << endl;
+    cout <<" Append a string ' end' at last of the string using operator:: "<< txt + " end" << endl;
+    cout <<" The string ' insert ' inserting at 3rd position of the string:: "<< txt.insert(3, " insert ") << endl;
+
+    string txt1;
+    txt1 = txt;
+    cout <<" The new string is:: "<< txt1 << endl;
+}
+
+void firstLastNumberSwap(int n) {
+    int  first, last, sum, digits, nn, a, b;
+    cout << "\n\n Find the number after swapping the first and last digits:\n";
+    cout << "-------------------------------------------------------------\n";
+    digits = (int)log10(n);
+    first = n / pow(10, digits);
+    last = n % 10;
+    a = first * (pow(10, digits));
+    b = n % a;
+    n = b / 10;
+    nn = last * (pow(10, digits)) + (n * 10 + first);
+    cout << " The number after swaping the first and last digits are: " << nn << endl;
+}
+
+void numberOfDigitsOfSum(int x, int y) {
+cout << "\n Number of Digits of the " << x <<" + " << y << " is : ";
+        stringstream str1;
+        str1 << x + y;
+        cout << str1.str().size() << endl;
+        cout << " The result : " << str1.str() << endl;
+}
+
+void numberSort() {
+    int num[7] = {89,7,1,2,4,90,11};
+    sort(num, num+7);
+    cout << "\n NumberSort - Before Sorting\n";
+    for (int i : num)
+        cout << i << " ";
+    cout << "\n  After Sorting \n";
+    cout << " " << num[6]  << " " << num[5]  << " " << num[4]  << " " << num[3]  << " " << num[2] << " " << num[1] << " " << num[0];
+}
+
+void lowerToUpperCase() {
+    string text = "the quick brown fox jumps over the lazy dog.";
+    cout << "\n lowerToUpperCase \n  The original text  \n" << text;
+    transform(text.begin(), text.end(), text.begin(), ::toupper);
+    cout << "\n after conversion \n" << text;
+    cout << text << endl;
+}
+
+
+void extractDigitFromString() {
+    cout << "\n Extract Digit From String  and add them \n ";
+    string str1 = "2  chairs, 15 desks, 1 blackboard and 2 fans ";
+    cout << " \n input string is :  \n " << str1;
+    int sum_num = 0, num;
+
+    for (int i = 0; i < (int)str1.size(); i++) {
+        if (isdigit(str1[i])) continue;
+        else {
+            str1[i] = ' ';
+        }
+
+        stringstream abc(str1);
+        while (abc >> num) {
+            sum_num += num;
+        }
+    }
+    cout << "\n Sum of all positive integers: " << sum_num << endl;
+}
+
+void HourMinuteSeparation(int num) {
+    cout << "\n --- HourMinuteSeparation --- of " << num << " minutes\n";
+    bool flag;
+    int hr = 0;
+    do
+    {
+        flag = false;
+        if (num >= 60)
+        {
+            hr++;
+            num -= 60;
+            flag = true;
+        }
+    } while (flag);
+    cout << "\nH:M " << hr << ":" << num << endl;
+}
+
+void sumOfDigitsOfRange(int x, int y) {
+    cout << endl <<  " sumOfDigitsOfRange for " << x << " and " << y << " is :  ";
+    int digit_sum = 0;
+    for(int i = x; i <= y; ++i)
+    {
+        int p = i;
+        while(p > 0)
+        {
+            digit_sum += p % 10;
+            p /= 10;
+        }
+    }
+    cout <<  digit_sum << endl ;
+}
+
+void stringReverse(){
+    string str1 = "I am Yuvaraj";
+    string str2 = str1;
+    cout << endl << " stringReverse " << endl;
+    cout << str1;
+    cout << "\n After Reserve \n";
+    string temp_str = str1;
+    int index_pos = 0;
+    for (int x = temp_str.length()-1; x >= 0; x--)
+    {
+        str1[index_pos] = temp_str[x];
+        index_pos++;
+    }
+    cout << str1 << endl ;
+    cout << str2 ;
+    for (int j =str2.length()-1; j >=0; j--)
+    {
+        cout << str2[j];
+    }
+
+
+}
+
 int main(){
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
@@ -428,6 +604,7 @@ int main(){
     armstrong(11);
     sumOfDigits(123);
     sumOfDigits(111);
+    sumOfDigitsOfRange(11,13);
     swapNumbers(10,20);
     swapNumbersPlusMinus(39,78);
     numberToWord(7687);
@@ -444,8 +621,33 @@ int main(){
     charToInt('5');
     charToInt('8');
     listReverse();
+    currentDateTime();
+    stringOperations();
+    firstLastNumberSwap(12345);
+    //vectorDecending();
+    numberOfDigitsOfSum(1,3);
+    numberOfDigitsOfSum(1,101);
+    numberSort();
+    lowerToUpperCase();
+    extractDigitFromString();
+    HourMinuteSeparation(120);
+    HourMinuteSeparation(67);
+    HourMinuteSeparation(167);
+    stringReverse();
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
