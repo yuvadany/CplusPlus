@@ -563,11 +563,12 @@ void sumOfDigitsOfRange(int x, int y) {
 
 void stringReverse(){
     string str1 = "I am Yuvaraj";
-    string str2 = str1;
+    string str2 = str1,str3;
     cout << endl << " stringReverse " << endl;
     cout << str1;
-    cout << "\n After Reserve \n";
+    cout << "\n After Reverse \n";
     string temp_str = str1;
+    int k=0;
     int index_pos = 0;
     for (int x = temp_str.length()-1; x >= 0; x--)
     {
@@ -575,12 +576,14 @@ void stringReverse(){
         index_pos++;
     }
     cout << str1 << endl ;
-    cout << str2 ;
+
     for (int j =str2.length()-1; j >=0; j--)
     {
-        cout << str2[j];
+        str3 [k] = str2[j];
+        ++k;
     }
-
+    cout << "after conversion str3";
+    cout << str3;
 
 }
 
