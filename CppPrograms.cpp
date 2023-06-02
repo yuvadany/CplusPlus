@@ -24,6 +24,8 @@ void intToChar(int number);
 
 void intToString(int number);
 
+void listReverse();
+
 using namespace std;
 
 void twoDimensionArray(){
@@ -333,8 +335,8 @@ void charToInt(char char_num){
     cout << num_2 << endl;
 }
 
-void numberToChar(int number) {
-    cout <<  " \n numberToChar of " << number << " is below \n ";
+void numberToWord(int number) {
+    cout <<  " \n numberToWord of " << number << " is below \n ";
     long int sum=0,r;
   /*  while(number>0)
     {
@@ -345,6 +347,8 @@ void numberToChar(int number) {
     number=sum;*/
     char wordsFromDigits[] = {};
     list<string> my_list;
+    if (number ==0)
+        my_list.push_front("Zero ");
     while(number>0)
     {
         r=number%10;
@@ -352,43 +356,33 @@ void numberToChar(int number) {
         {
 
             case 1:
-                cout<<"one ";
                 my_list.push_front("one ");
                 break;
             case 2:
-                cout<<"two ";
                 my_list.push_front("two ");
                 break;
             case 3:
-                cout<<"three ";
                 my_list.push_front("three ");
                 break;
             case 4:
-                cout<<"four ";
                 my_list.push_front("four ");
                 break;
             case 5:
-                cout<<"five ";
                 my_list.push_front("five ");
                 break;
             case 6:
-                cout<<"six ";
                 my_list.push_front("six ");
                 break;
             case 7:
-                cout<<"seven ";
                 my_list.push_front("seven ");
                 break;
             case 8:
-                cout<<"eight ";
                 my_list.push_front("eight ");
                 break;
             case 9:
-                cout<<"nine ";
                 my_list.push_front("nine ");
                 break;
             case 0:
-                cout<<"zero ";
                 my_list.push_front("zero ");
                 break;
             default:
@@ -403,7 +397,17 @@ void numberToChar(int number) {
 
 }
 
+void listReverse() {
+    cout << "\n List Reverse Example \n";
+    list<int> num_list = {1,2,3,4,5};
+    for (int num : num_list)
+        cout << num << " " ;
+    cout << endl << "After List Reverse ";
+    num_list.reverse();
+    for (int num : num_list)
+        cout << num << " " ;
 
+}
 int main(){
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
@@ -426,9 +430,10 @@ int main(){
     sumOfDigits(111);
     swapNumbers(10,20);
     swapNumbersPlusMinus(39,78);
-    numberToChar(7687);
-    numberToChar(4432);
-    numberToChar(1500);
+    numberToWord(7687);
+    numberToWord(4432);
+    numberToWord(1500);
+    numberToWord(0);
     numberTriangle(9);
     arrayToString();
     arrayToString2();
@@ -438,8 +443,11 @@ int main(){
     intToStringToChar(2300);
     charToInt('5');
     charToInt('8');
+    listReverse();
     return 0;
 }
+
+
 
 
 
