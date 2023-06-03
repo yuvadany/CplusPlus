@@ -43,6 +43,10 @@ void HourMinuteSeparation(int i);
 
 void sumOfDigitsOfRange(int x, int y);
 
+void charPrint();
+
+void change_letter();
+
 using namespace std;
 
 void twoDimensionArray(){
@@ -587,6 +591,25 @@ void stringReverse(){
 
 }
 
+void charPrint() {
+    cout << " \n ~~~~~~~ Character Print  - Upper Case~~~~~~~~ \n";
+    char ch;
+
+    for (int i=65; i<=90; ++i)
+        cout << char (i) << " ";
+
+    cout << "\n ~~~~~~~~~~~~~  Character Print  - Lower Case ~~~~~~~~~~~~\n";
+    for (int i=97; i<=122; ++i)
+        cout << char (i) << " ";
+
+    cout <<"\n";
+
+    for (int i=91; i<=96; ++i)
+        cout << char (i) << " ";
+
+}
+
+
 int main(){
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
@@ -637,8 +660,39 @@ int main(){
     HourMinuteSeparation(67);
     HourMinuteSeparation(167);
     stringReverse();
+    charPrint();
+    change_letter();
     return 0;
 }
+
+void change_letter() {
+    cout << "\n ~~~~~~~~~~~~~~  change_letter ~~~~~~~~~~~~~~~~~ \n";
+    string str = "aaabbbccc";
+    cout << " input : " << str;
+    int char_code;
+
+    for (int x = 0; x < str.length(); x++)
+    {
+        char_code = int(str[x]);
+
+        if (char_code == 122)
+        {
+            str[x] = char(97);
+        }
+        else if (char_code == 90)
+        {
+            str[x] = char(65);
+        }
+        else if (char_code >= 65 && char_code <= 90 || char_code >= 97 && char_code <= 122)
+        {
+            str[x] = char(char_code + 1);
+        }
+
+    }
+    cout << "\n After letter got changed : " << str;
+}
+
+
 
 
 
