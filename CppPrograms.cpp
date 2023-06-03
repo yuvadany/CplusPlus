@@ -609,6 +609,45 @@ void charPrint() {
 
 }
 
+void change_letter() {
+    cout << "\n ~~~~~~~~~~~~~~  change_letter ~~~~~~~~~~~~~~~~~ \n";
+    string str = "aaabbbccc";
+    cout << " input : " << str;
+    int char_code;
+
+    for (int x = 0; x < str.length(); x++)
+    {
+        char_code = int(str[x]);
+
+        if (char_code == 122)
+        {
+            str[x] = char(97);
+        }
+        else if (char_code == 90)
+        {
+            str[x] = char(65);
+        }
+        else if (char_code >= 65 && char_code <= 90 || char_code >= 97 && char_code <= 122)
+        {
+            str[x] = char(char_code + 1);
+        }
+
+    }
+    cout << "\n After letter got changed : " << str;
+}
+
+void Capitalize_first_letter(){
+    string str = "india is my country";
+    cout << "\n Capitalize_first_letter \n " << " The input String is : " << str;
+
+    str[0]= toupper(str[0]);
+    for (int i=1; i<str.length(); i++)
+    {
+        if(str[i-1] == ' ')
+            str[i] = toupper(str[i]);
+    }
+    cout << " \n the Result : " << str;
+}
 
 int main(){
     twoDimensionArray();
@@ -662,35 +701,11 @@ int main(){
     stringReverse();
     charPrint();
     change_letter();
+    Capitalize_first_letter();
     return 0;
 }
 
-void change_letter() {
-    cout << "\n ~~~~~~~~~~~~~~  change_letter ~~~~~~~~~~~~~~~~~ \n";
-    string str = "aaabbbccc";
-    cout << " input : " << str;
-    int char_code;
 
-    for (int x = 0; x < str.length(); x++)
-    {
-        char_code = int(str[x]);
-
-        if (char_code == 122)
-        {
-            str[x] = char(97);
-        }
-        else if (char_code == 90)
-        {
-            str[x] = char(65);
-        }
-        else if (char_code >= 65 && char_code <= 90 || char_code >= 97 && char_code <= 122)
-        {
-            str[x] = char(char_code + 1);
-        }
-
-    }
-    cout << "\n After letter got changed : " << str;
-}
 
 
 
