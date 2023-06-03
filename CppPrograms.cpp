@@ -4,6 +4,7 @@
 #include <list>
 #include <math.h>
 #include <sstream>
+#include <string.h>
 
 void factorial(int i);
 
@@ -649,6 +650,21 @@ void Capitalize_first_letter(){
     cout << " \n the Result : " << str;
 }
 
+
+void stringCompare(){
+    cout << "\n String Compare \n";
+    const char *str1 = "yuvaraj is an engineer";
+    const char *str2 = "Sankari is an engineer";
+    cout << endl << " String one :  " << str1 << endl;
+    cout << endl << " String two :  " << str2 << endl;
+    if (strcmp(str1,str2)==0)
+        cout << "\n The  2 strings are same : ";
+        else
+        cout << "\n The 2 strings are different ";
+
+
+}
+
 int main(){
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
@@ -702,6 +718,7 @@ int main(){
     charPrint();
     change_letter();
     Capitalize_first_letter();
+    stringCompare();
     return 0;
 }
 
