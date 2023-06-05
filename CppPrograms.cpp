@@ -655,11 +655,17 @@ void stringCompare(){
     cout << "\n String Compare \n";
     const char *str1 = "yuvaraj is an engineer";
     const char *str2 = "Sankari is an engineer";
+    string str3  = "i am an indian";
+    string str4  = "i am a indian";
     cout << endl << " String one :  " << str1 << endl;
     cout << endl << " String two :  " << str2 << endl;
     if (strcmp(str1,str2)==0)
         cout << "\n The  2 strings are same : ";
         else
+        cout << "\n The 2 strings are different ";
+    if(str3.compare(str4)==0)
+        cout << "\n The  2 strings are same : ";
+    else
         cout << "\n The 2 strings are different ";
 
 
