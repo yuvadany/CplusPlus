@@ -48,6 +48,10 @@ void charPrint();
 
 void change_letter();
 
+void largestWord();
+
+void sort_characters();
+
 using namespace std;
 
 void twoDimensionArray(){
@@ -671,6 +675,169 @@ void stringCompare(){
 
 }
 
+void largestWord() {
+    cout << endl << "Largest Word \n" ;
+    char *ptr; // declare a ptr pointer
+string sentence = "Yuvaraj is an engineer";
+cout << "Input String is : " << sentence;
+char chat_sen[sentence.length()];
+ list<string> length_list;
+for (int i=0; i <sentence.length(); i++){
+    chat_sen[i] = sentence[i];
+}
+cout << endl << "The character Array : " << chat_sen << endl;
+    ptr = strtok(chat_sen, " , ");
+    while (ptr != 0) {
+        length_list.push_front(ptr);
+        // Use of strtok
+        // go through other tokens
+        ptr = strtok (NULL, " , ");
+    }
+    //cout << endl << " List items " << length_list << endl;
+    length_list.reverse();
+
+    for (string word : length_list)
+        cout << word << " ";
+}
+
+void largestWord_2() {
+cout << endl << " largestWord_2  \n";
+string text = "Yuvaraj is an software coumpterScience Engineer";
+cout << endl << "Given Text : " << text << endl;
+string word;
+for (int i=0; i<text.length()/2; i++){
+    if(text[i] != ' ')
+        word.push_back(text[i]);
+}
+cout << word << " - ";
+}
+
+void mapSam(){
+cout << "\n Map Example \n" ;
+map <string,int>  mapSam = {{"yuvaraj",7},{"is",2},{"an",2},{"engineer",8}};
+list<int> list_num;
+ int longest = 0;
+    for (map<string,int>::iterator itr=mapSam.begin(); itr!=mapSam.end(); itr++)
+    {
+        list_num.push_front(itr->second);
+        cout << itr->first << itr->second;
+    }
+    list_num.sort();
+    cout << endl << "List after sorting \n";
+    for (int i : list_num)
+        cout << i <<  ", ";
+
+    cout << endl;
+   auto n  =  list_num.end();
+    std::advance(n, 0);
+    cout << ' ' << *n;
+   /* for (auto it = list_num.begin(); it != list_num.end(); ++it)
+        cout << ' ' << *it;*/
+   //int  long_word = *n;
+   //cout << "\n The Longest word : " <<long_word << endl;
+
+}
+
+void Longest_Word() {
+    cout << "\n Longest_Word Program \n";
+string text = "Yuvaraj is an engineer";
+    string result_word, temp_str1;
+
+    for (int x = 0; x < text.length(); x++)
+    {
+        if (text[x] != ' ' && (int(text[x]) >= 65 && int(text[x]) <= 90) || (int(text[x]) >= 97 && int(text[x]) <= 122) || (int(text[x] >= 48 && int(text[x])<= 57)))
+        {
+            result_word.push_back(text[x]);
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    for (int x = 0; x < text.length(); x++)
+    {
+        if (text[x] != ' ' && (int(text[x]) >= 65 && int(text[x]) <= 90) || (int(text[x]) >= 97 && int(text[x]) <= 122) || (int(text[x] >= 48 && int(text[x]) <= 57)))
+        {
+            temp_str1.push_back(text[x]);
+
+            if (x + 1 == text.length() && temp_str1.length() > result_word.length())
+            {
+                result_word = temp_str1;
+            }
+        }
+        else
+        {
+            if (temp_str1.length() > result_word.length())
+            {
+                result_word = temp_str1;
+            }
+
+            temp_str1.clear();
+        }
+    }
+
+    cout << "The largest word from " << text << " is -> " << result_word;
+}
+
+
+void sort_characters() {
+    cout << "\n sort_characters \n ";
+string sent = "zxy";
+char ch;
+bool flag = false;
+    cout << "\n before Sorting  - " << sent;
+
+        flag = false;
+for (int i=0; i<sent.length(); i++)
+{
+    if (sent[i]> sent[i+1])
+    {
+        ch = sent[i];
+        sent[i]= sent[i+1];
+        sent[i+1] = ch;
+        flag = true;
+    }
+
+}
+cout << "\n After Sorting  - " << sent;
+}
+
+
+void sort_characters_2(){
+    cout << endl <<  sort_characters_2 << endl;
+    bool flag;
+    char ch;
+string text = "xyzcba";
+    do
+    {
+        flag = false;
+
+        for (int x = 0; x < text.length() - 1; x++)
+        {
+            if (text[x] > text[x + 1])
+            {
+                ch = text[x];
+                text[x] = text[x + 1];
+                text[x + 1] = ch;
+                flag = true;
+            }
+        }
+    } while (flag);
+
+    // Remove spaces
+    string str;
+    for (int y = 0; y < text.length(); y++)
+    {
+        if (text[y] != ' ')
+        {
+            str.push_back(text[y]);
+        }
+    }
+
+    cout <<  str;
+}
+
 int main(){
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
@@ -708,6 +875,7 @@ int main(){
     charToInt('5');
     charToInt('8');
     listReverse();
+    mapSam();
     currentDateTime();
     stringOperations();
     firstLastNumberSwap(12345);
@@ -725,8 +893,17 @@ int main(){
     change_letter();
     Capitalize_first_letter();
     stringCompare();
+    largestWord();
+    largestWord_2();
+    Longest_Word();
+    sort_characters();
+    sort_characters_2();
     return 0;
 }
+
+
+
+
 
 
 
