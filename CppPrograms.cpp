@@ -838,7 +838,7 @@ string text = "xyzcba";
     cout <<  str;
 }
 
-int main(){
+int main_cpp(){
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
     frequencyOfWords(str);
