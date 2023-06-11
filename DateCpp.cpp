@@ -25,7 +25,7 @@ else
     cout << "/The given Year " << year << " is not a Leap year \n" ;
 }
 
-int main(){
+int main_test_date(){
 currentTime();
 year_to_century(2000);
 year_to_century(1901);
