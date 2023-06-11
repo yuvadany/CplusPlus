@@ -76,9 +76,33 @@ void stringFind(){
     cout << name.find(find);
 }
 
+void stringSwap(){
+    cout << "\n String Swap \n";
+    string john= "john";
+    string david = "david";
+    cout << " john = " << john;
+    cout << endl << "david= " << david;
+    cout << "\n name swap is in-progress\n";
+    john.swap(david);
+    cout << " john = " << john;
+    cout << endl << "david= " << david;
+
+}
+
+void substring(){
+
+    cout << "\n ####  substring ##### \n";
+    string sentence = "indian is in asian continent";
+string subString =  sentence.substr(sentence.find("continent"),9);
+cout << endl << " The sentence is : " << sentence;
+    cout << endl << " The substring is : " << subString;
+}
+
 int main (){
     cout << " \n String Programs \n " ;
    // charString();
     //stringClass();
     stringFind();
+    stringSwap();
+    substring();
 }
