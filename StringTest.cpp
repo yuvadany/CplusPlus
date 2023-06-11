@@ -67,8 +67,18 @@ else
     cout << "\n str3 size = " << str3.size();
 }
 
+void stringFind(){
+    cout << " \n String Find() \n";
+    string name= "yuvaraj is an engineer";
+    string find = "engineer";
+    cout << "\n enter a word for search \n ";
+    //cin >> find;
+    cout << name.find(find);
+}
+
 int main (){
     cout << " \n String Programs \n " ;
    // charString();
-    stringClass();
+    //stringClass();
+    stringFind();
 }
