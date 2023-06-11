@@ -70,7 +70,7 @@ else
 void stringFind(){
     cout << " \n String Find() \n";
     string name= "yuvaraj is an engineer";
-    string find = "engineer";
+    string find = "is";
     cout << "\n enter a word for search \n ";
     //cin >> find;
     cout << name.find(find);
