@@ -34,29 +34,41 @@ void charString() {
 if(result==0)
     cout << "\n "<<  str1 << " and " << str2 << " are same " ;
 
+cout << endl;
 
 }
 
-void strCompare(){
-    cout << "\n String Compare \n";
-    const char *str1 = "yuvaraj is an engineer";
-    const char *str2 = "yuvaraj is an engineer";
-    string str3  = "i am an indian";
-    string str4  = "i am a indian";
-    cout << endl << " String one :  " << str1 << endl;
-    cout << endl << " String two :  " << str2 << endl;
-    if (strcmp(str1,str2)==0)
-        cout << "\n The  2 strings are same : ";
+void stringClass(){
+cout << " \n string Class programs \n";
+string str1 = "yuvaraj";
+string str2 = "yuvaraj";
+string str3 = "YUVARAJ";
+if(str1.compare(str2) == 0)
+    cout << endl << str1 << " and " << str2 << " are same.";
+else
+    cout << endl << str1 << " and " << str2 << " are not same.";
+
+    transform(str3.begin(),str3.end(),str3.begin(), ::tolower);
+    if(str1.compare(str3) == 0)
+        cout << endl << str1 << " and " << str3 << " are same.";
     else
-        cout << "\n The 2 strings are different ";
-    if(str3.compare(str4)==0)
-        cout << "\n The  2 strings are same : ";
+        cout << endl << str1 << " and " << str3 << " are not same.";
+
+    str2 = str2 + " engineer ";
+    if(str1.compare(str2) == 0)
+        cout << endl << str1 << " and " << str2 << " are same.";
     else
-        cout << "\n The 2 strings are different ";
+        cout << endl << str1 << " and " << str2 << " are not same.";
+
+
+    cout << " \n String size : ";
+    cout << "\n str1 size = " << str1.size();
+    cout << "\n str2 size = " << str2.size();
+    cout << "\n str3 size = " << str3.size();
 }
 
 int main (){
     cout << " \n String Programs \n " ;
-    charString();
-    strCompare();
+   // charString();
+    stringClass();
 }
