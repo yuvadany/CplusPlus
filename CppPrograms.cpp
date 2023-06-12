@@ -96,7 +96,6 @@ void frequencyOfWords(string str){
                     M.insert(make_pair(word, 1));
                     word = "";
                 }
-
                     // update the frequency
                 else {
                     M[word]++;
@@ -837,8 +836,27 @@ string text = "xyzcba";
 
     cout <<  str;
 }
+void intArraySum(){
+cout << " \n int Array Sum \n";
+int numArray[] = {12,56,-90,56,88,789,-10};
+int positiveSum=0;
+int negativeSum=0;
+int length = sizeof (numArray)/sizeof(int);
+    cout << "\n Array length : " << length << endl ;
+    for (int i=0; i<length; i++){
+        if (numArray[i] > 0){
+            positiveSum+=numArray[i];
+        }else if (numArray[i] < 0){
+            negativeSum+=numArray[i];
+        }
+    }
 
-int main_cpp(){
+    cout << "\n positiveSum : " << positiveSum ;
+    cout << "\n negativeSum : " << negativeSum << endl;
+}
+
+int main(){
+    intArraySum();
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
     frequencyOfWords(str);

@@ -59,7 +59,7 @@ void mapFind() {
     }while (flag);
 
 }
-int main(){
+int main_mapp(){
     cout << endl << " Map Programs \n";
     mapAdd();
     mapFind();
