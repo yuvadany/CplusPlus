@@ -855,8 +855,42 @@ int length = sizeof (numArray)/sizeof(int);
     cout << "\n negativeSum : " << negativeSum << endl;
 }
 
+void wordFrequency(){
+    cout << "\n Word Frequency \n";
+    map<string,int> wordCountMap ;
+    string word = "";
+    string text = "I am coming from india I am an engineer I work in techm";
+    for (int i=0; i<text.length(); i++){
+        if (text[i]== ' '){
+        if(wordCountMap.find(word) == wordCountMap.end()){
+            wordCountMap.insert(make_pair(word,1));
+            word = "";
+        }else {
+            wordCountMap[word]++;
+            word = "";
+        }
+        }else {
+            word+=text[i];
+        }
+    }
+
+    if(wordCountMap.find(word) == wordCountMap.end()){
+        wordCountMap.insert(make_pair(word,1));
+    }else {
+        wordCountMap[word]++;
+    }
+    cout << endl << "The Given Text :" << text << endl;
+    cout << "The word frequency is below \n" ;
+    for (auto itr=wordCountMap.begin(); itr!=wordCountMap.end(); ++itr){
+        cout << itr->first << " : " << itr->second << " ";
+    }
+
+
+}
+
 int main(){
     intArraySum();
+    wordFrequency();
     twoDimensionArray();
     string str = "I am yuvaraj. and I have 2 kids";
     frequencyOfWords(str);
