@@ -97,12 +97,36 @@ string subString =  sentence.substr(sentence.find("continent"),9);
 cout << endl << " The sentence is : " << sentence;
     cout << endl << " The substring is : " << subString;
 }
+void replace(){
+    cout << "\n  String Replace \n ";
+    string sent = "john is a civil engineer";
+    cout << " Before the string replace \n" << sent ;
+    sent.replace(sent.find("civil"),5,"computer");
+    cout << "\n After the string replace \n" << sent << endl;
+}
+void find(){
+    string str1 = "Dancing is my favorite hobby";
+    cout << "String contains :"<< str1<< '\n';
+    cout <<"Position of the first occurrence of the string 'favorite' is " << str1.find_first_of("favorite") << endl;
+    cout <<"Position of the last  occurrence of the string 'favorite' is " << str1.find_last_of("favorite");
 
-int main (){
+}
+
+void insert(){
+    cout << "\n insert #### \n";
+   string sent = "i am a programmer";
+
+}
+
+int main_string (){
     cout << " \n String Programs \n " ;
    // charString();
     //stringClass();
     stringFind();
     stringSwap();
     substring();
+    replace();
+    find();
+    insert();
+    return 0;
 }
