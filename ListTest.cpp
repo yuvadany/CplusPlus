@@ -65,7 +65,7 @@ void listAdd() {
 }
 
 
-int main(){
+int main_list(){
     cout << "\n List Programs \n";
     listAdd();
     return 0;
