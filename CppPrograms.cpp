@@ -884,7 +884,7 @@ void wordFrequency(){
 
 }
 
-int main(){
+int main_cpp(){
     intArraySum();
     wordFrequency();
     twoDimensionArray();
