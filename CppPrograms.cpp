@@ -133,11 +133,8 @@ void frequencyOfWords(string str){
         while(number!=0)
         {
             rem = number%10;
-            cout << rem  << endl ;
             rev = rem + (rev*10);
-            cout << rev << endl ;
             number = number/10;
-            cout << number << endl ;
         }
 cout << "end\n";
         cout<<"\nReverse of  " << num << " is "<<rev;
@@ -370,7 +367,6 @@ void numberToWord(int number) {
         number=number/10;
     }
     number=sum;*/
-    char wordsFromDigits[] = {};
     list<string> my_list;
     if (number ==0)
         my_list.push_front("Zero ");
